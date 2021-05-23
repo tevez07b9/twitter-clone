@@ -1,0 +1,5 @@
+1. Switch the graphql generator with the one used in lireddit, for web.
+2. Try adding all features in urql client with apollo client.
+3. Try replacing prisma with type-graphql, right now it's some wierd nexus.
+4. Try learning core graphql, Ben Award.
+5. Try learning React with typescript, Ben Award.
