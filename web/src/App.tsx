@@ -9,6 +9,10 @@ import Users from "./components/Users";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./components/Landing";
 import { setContext } from "apollo-link-context";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import IsAuthenticated from "./components/IsAuthenticated";
+import "./App.css";
 
 const httpLink = new HttpLink({ uri: "http://localhost:4000" });
 const authLink = setContext(async (req, { headers }) => {
@@ -31,11 +35,19 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/landing">
             <Landing />
           </Route>
           <Route path="/">
-            <Users />
+            <IsAuthenticated>
+              <Users />
+            </IsAuthenticated>
           </Route>
         </Switch>
       </Router>

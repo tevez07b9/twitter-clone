@@ -28,7 +28,7 @@ export default function Users() {
   return (
     <div>
       {data.users.map((user: User) => (
-        <p>{user.name}</p>
+        <p key={user.id}>{user.name}</p>
       ))}
     </div>
   );
